@@ -5,10 +5,42 @@
         <meta charset="urtf-8">
         <meta name="viewport" content="width=device-width">
         <link href="style.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body>
-        <h1>The can store</h1>
+        <header>
+            <h1>The can store</h1>
+        </header>
+
+        <div>
+            <aside>
+                <form>
+                    <div>
+                        <label for="category">Choose a category:</label>
+                        <select id="category">
+                            <option selected>All</option>
+                            <option>Vegetables</option>
+                            <option>Meat</option>
+                            <option>Soup</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="search-term">Enter a search term</label>
+                        <input type="text" id="search-term" name="search-term" placeholder="e.g. beans" />
+                    </div>
+
+                    <div>
+                        <button id="filter-results">Filter results</button>
+                    </div>
+                </form>
+            </aside>
+
+            <main>
+
+            </main>
+        </div>
+        
 
         <script src="main.js"></script>
     </body>
