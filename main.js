@@ -54,7 +54,7 @@ function displayProducts(products)
 
     if(lastCategory === category && lastSearch === search)
     {
-        console.log("Category and search term is the same, all displayed products stay the same");
+        //console.log("Category and search term is the same, all displayed products stay the same");
         searchString.value = "";
         return true;
     }
@@ -77,10 +77,13 @@ function displayProducts(products)
             const newImage = document.createElement('img');
             const newPara = document.createElement('p');
 
-            newHeading.textContent = `${product.name}`;
-            newImage.setAttribute('src', url);
-            newPara.textContent = `${product.type}: ${product.price}`;
+            newHeading.textContent = `${product.name[0].toUpperCase() + product.name.slice(1)}`;
+            newPara.textContent = `$${product.price.toFixed(2)}`;
             newSection.setAttribute('class', product.type);
+
+            const imageURL = URL.createObjectURL(blob);
+            newImage.setAttribute('src', imageURL);
+            newImage.setAttribute('alt', product.name);
 
             newSection.appendChild(newHeading);
             newSection.appendChild(newImage);
@@ -115,10 +118,7 @@ button.addEventListener('click', (event) =>
 {
     //event.stopImmediatePropagation();
 
-    console.log("finished calculations");
     const promise = fetchProducts();
     promise.then((data) => displayProducts(data));
 });
-
-//button.click();
 
